@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Patient: {{broker.Firstname}} {{broker.Middlenames}} {{broker.Surname}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="broker">
+
+    <ion-card>
+
+        <ion-card-content>
+            <img src="http://ehr.sibandacapital.com/images/Patients/{{broker.PatientId}}.jpg"/>
+            <h2>{{broker.Firstname}} {{broker.Middlenames}} {{broker.Surname}}</h2>
+            <h3>{{broker.IDNumber}}</h3>
+        </ion-card-content>
+
+        <ion-list>
+            <a href="tel:{{broker.TelephoneNumber}}" ion-item>
+                <ion-icon name="call" item-left></ion-icon>
+                <p>Telephone Number</p>
+                <h2>{{broker.TelephoneNumber}}</h2>
+            </a>
+              <a href="tel:{{broker.CellphoneNumber}}" ion-item>
+                <ion-icon name="call" item-left></ion-icon>
+                <p>Cellphone Number</p>
+                <h2>{{broker.CellphoneNumber}}</h2>
+            </a>
+            <ion-item>
+                <ion-icon name="icon" item-left></ion-icon>
+                <p>Physical Address</p>
+                <h2>{{broker.PhysicalAddress}}</h2>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="text" item-left></ion-icon>
+                <p>Postal Address</p>
+                <h2>{{broker.PostalAddress}}</h2>
+            </ion-item>
+            <a href="mailto:{{broker.Username}}" ion-item>
+                <ion-icon name="mail" item-left></ion-icon>
+                <p>Email</p>
+                <h2>{{broker.Username}}</h2>
+            </a>
+
+            <ion-item>
+                <ion-icon name="icon" item-left></ion-icon>
+                <p>Date of Birth</p>
+                <h2>{{broker.DateOfBirth}}</h2>
+            </ion-item>
+              <ion-item>
+                <ion-icon name="icon" item-left></ion-icon>
+                <p>Gender</p>
+                <h2>{{broker.Gender}}</h2>
+            </ion-item>
+              <ion-item>
+                <ion-icon name="icon" item-left></ion-icon>
+                <p>Medical Aid Number</p>
+                <h2>{{broker.MedicalAidNumber}}</h2>
+            </ion-item>
+              <ion-item>
+                <ion-icon name="icon" item-left></ion-icon>
+                <p>Medical Aid Provider</p>
+                <h2>{{broker.MedicalAidProvider}}</h2>
+            </ion-item>
+        </ion-list>
+
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <h2>EHR</h2>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <h2>Events</h2>
+        </ion-card-content>
+    </ion-card>
+
+     <ion-card>
+        <ion-card-content>
+            <h2>Allergies</h2>
+        </ion-card-content>
+    </ion-card>
+
+     <ion-card>
+        <ion-card-content>
+            <h2>Historical Clinical Documents</h2>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <h2>Nominees</h2>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

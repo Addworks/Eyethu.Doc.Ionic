@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Event Detail - {{property.PatientName}} {{property.EventType.EventTypeName}} on {{property.EventDate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="property.EventId">
+        <ion-card-content>
+            <div class="row">
+                <div class="col" style="text-align:center;">
+                    
+                    <h2>{{property.EventType.EventTypeName}}</h2>
+                    <p>On <b>{{property.EventDate}}</b> at <b>{{property.Facility}}</b> with <b>{{property.Practitioner.Firstname}} {{property.Practitioner.Surname}}</b></p>
+                    <br/>
+                    <p>
+                        <img style="max-width:100%;"  src="http://ehr.sibandacapital.com/images/Patients/{{property.PatientId}}.jpg" />
+                    </p>
+                    
+                </div>
+                <div class="col">
+                    <ion-list>
+                        <ion-item>
+                            <ion-icon item-left name="moon"></ion-icon>
+                            <h3>Metrics</h3>
+                            <ion-note item-right>
+                                <button ion-button icon-left (click)="metrics(property)">
+                                    <!-- <ion-icon name="star"></ion-icon> -->
+                                    {{property.Metrics.length}}
+                                </button>
+                            </ion-note>
+                        </ion-item>
+                        
+                        <ion-item>
+                            <ion-icon item-left name="leaf"></ion-icon>
+                            <h3>Diagnoses</h3>
+                             <ion-note item-right>
+                                <button ion-button icon-left (click)="diagnoses(property)">
+                                    {{property.Diagnoses.length}}
+                                </button>
+                            </ion-note>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon item-left name="pricetag"></ion-icon>
+                            <h3>Prescriptions</h3>
+                             <ion-note item-right>
+                                <button ion-button icon-left (click)="prescriptions(property)">
+                                    {{property.Prescriptions.length}}
+                                </button>
+                            </ion-note>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon item-left name="pricetag"></ion-icon>
+                            <h3>Operations</h3>
+                             <ion-note item-right>
+                                <button ion-button icon-left (click)="operations(property)">
+                                   
+                                    {{property.Operations.length}}
+                                </button>
+                            </ion-note>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon item-left name="pricetag"></ion-icon>
+                            <h3>Referrals</h3>
+                             <ion-note item-right>
+                                <button ion-button icon-left (click)="referrals(property)">
+                                   
+                                    {{property.Referrals.length}}
+                                </button>
+                            </ion-note>
+                        </ion-item>
+                        <!-- <button ion-item (click)="openBrokerDetail(property.broker)">
+                <ion-avatar item-left>
+                    <img src="{{property.broker.picture}}"/>
+                </ion-avatar>
+                <h2>{{property.broker.name}}</h2>
+                <p>{{property.broker.title}}</p>
+            </button> -->
+                    </ion-list>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Patients</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <button ion-item *ngFor="let patient of brokers" (click)="openBrokerDetail(patient)">
+            <ion-avatar item-left>
+                 <img src="http://ehr.sibandacapital.com/images/Patients/{{patient.PatientId}}.jpg"/> 
+            </ion-avatar>
+            <h2>{{patient.Firstname}} {{patient.Middlenames}} {{patient.Surname}} </h2>
+            <p>{{patient.IDNumber}}</p>
+        </button>
+
+    </ion-list>
+
+</ion-content>
